@@ -1,0 +1,19 @@
+Scheme Nanaban – Project Overview
+
+Abstract:
+
+Scheme Nanaban is an AI-powered web application that helps citizens discover government welfare schemes based on their personal profile and eligibility. Instead of manually searching through multiple government websites, users can enter their details and receive personalized scheme recommendations in a simple and user-friendly interface.
+The platform aims to reduce the time and complexity involved in finding suitable schemes while improving awareness and accessibility. It provides an intuitive experience for exploring scheme details and supports future enhancements such as AI-based eligibility analysis, document verification, chatbot assistance, and application tracking.
+
+Project Link : https://schemenanban.netlify.app/
+
+Key Features:
+
+* AI-assisted government scheme recommendations
+* User-friendly and responsive interface
+* Personalized eligibility-based suggestions
+* Search and explore government welfare schemes
+* Scalable architecture for future AI enhancements
+* Fast and secure web application
+
+Purpose: To bridge the gap between citizens and government welfare programs by making scheme discovery simple, personalized, and accessible.
