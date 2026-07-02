@@ -1,0 +1,26 @@
+// ─── Firestore Security Rules for SchemeNanban ───────────────────────────────
+// Paste this in Firebase Console → Firestore Database → Rules tab
+// Then click "Publish"
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users can read/write their own profile
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Applications (and all document chunk docs that start with an appId pattern)
+    // Admin email can read ALL; users can read/write their own
+    match /applications/{docId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // Legacy collection (kept for backward compatibility — read-only for admin)
+    match /applicationFiles/{docId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

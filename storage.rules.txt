@@ -1,0 +1,12 @@
+// ─── Firebase Storage Rules for SchemeNanban ─────────────────────────────────
+// Go to: Firebase Console → Storage → Rules tab → paste this → Publish
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /applications/{allPaths=**} {
+      // Any signed-in user can upload; any signed-in user (admin) can read
+      allow read, write: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Scholarship Finder</title>
+</head>
+<body>
+<h2>🎓 Student Scholarship Finder</h2>
+
+<input type="number" id="income" placeholder="Annual Income"><br><br>
+<select id="gender">
+<option>Any</option>
+<option>Male</option>
+<option>Female</option>
+</select><br><br>
+
+<select id="caste">
+<option>Any</option>
+<option>SC</option>
+<option>ST</option>
+<option>OBC</option>
+<option>Minority</option>
+</select><br><br>
+
+<select id="education">
+<option>School</option>
+<option>UG</option>
+<option>PG</option>
+</select><br><br>
+
+<button onclick="findSchemes()">Find Schemes</button>
+
+<pre id="result"></pre>
+
+<script>
+async function findSchemes() {
+    let data = {
+        income: document.getElementById("income").value,
+        gender: document.getElementById("gender").value,
+        caste: document.getElementById("caste").value,
+        education_level: document.getElementById("education").value
+    };
+
+    let res = await fetch("http://127.0.0.1:8000/check_schemes", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    });
+
+    let result = await res.json();
+    document.getElementById("result").innerText = JSON.stringify(result, null, 2);
+}
+</script>
+</body>
+</html>
