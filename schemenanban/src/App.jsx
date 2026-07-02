@@ -16,8 +16,8 @@ const FIREBASE_CONFIG = {
 const API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY;
 
 // ─── Admin Credentials ────────────────────────────────────────────────────────
-const ADMIN_EMAIL = "admin123@gmail.com";
-const ADMIN_PASSWORD = "SchemeAdmin@123";
+const ADMIN_EMAIL = "#####@mail.com";
+const ADMIN_PASSWORD = "#######";
 
 // ─── Firebase SDK loader ──────────────────────────────────────────────────────
 let firebaseApp = null, firebaseAuth = null, firebaseDb = null, firebaseStorage = null;
